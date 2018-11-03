@@ -1,0 +1,13 @@
+.app {
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+}
+
+app-login {
+  margin: auto;
+  width: 300px;
+}
