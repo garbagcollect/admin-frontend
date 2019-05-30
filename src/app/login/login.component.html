@@ -9,9 +9,10 @@
         <input matInput type="password" placeholder="Password" formControlName="password">
       </mat-form-field>
     </mat-card-content>
-    <mat-card-actions>
+    <mat-card-actions class="login-actions">
       <button mat-raised-button color="primary">LOGIN</button>
     </mat-card-actions>
+    <mat-error *ngIf="error">{{error}}</mat-error>
 
   </form>
 </mat-card>

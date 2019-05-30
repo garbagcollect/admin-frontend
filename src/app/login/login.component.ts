@@ -10,6 +10,7 @@ import { AuthenticationService } from '../_services/authentication.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  error: String;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
           console.info(data)
         },
         error => {
-          console.error(error)
+          this.error = error.statusText;
         });
   }
 
