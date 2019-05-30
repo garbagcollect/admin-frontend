@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { AuthenticationService } from '../_services/authentication.service';
+import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +14,7 @@ export class LoginComponent implements OnInit {
   error: String;
 
   constructor(
+    private router: Router,
     private formBuilder: FormBuilder,
     private authenticationService: AuthenticationService
   ) { }
@@ -34,7 +36,8 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           this.error = null;
-          console.info(data)
+          console.info(data);
+          this.router.navigate(['/']);
         },
         error => {
           this.error = error.statusText;
