@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ComponentsRoutingModule } from './components-routing.module';
@@ -23,6 +24,7 @@ import { HomeComponent } from './home/home.component';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
+    MatMenuModule,
     FormsModule,
     ReactiveFormsModule,
     ComponentsRoutingModule

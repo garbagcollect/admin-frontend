@@ -1,6 +1,5 @@
-<h2>Home</h2>
-<h3 *ngIf='isLogged'>{{username}}</h3>
-<nav>
-  <a routerLink='/login' *ngIf='!isLogged'>login</a>
-  <a routerLink='' *ngIf='isLogged' (click)='logout()'>logout</a>
-</nav>
+<div class="mat-app-background basic-container">
+  <button mat-button *ngIf='isLogged'>{{username}}</button>
+  <button mat-button routerLink='/login' *ngIf='!isLogged'>Login</button>
+  <button mat-button *ngIf='isLogged' (click)='logout()'>Logout</button>
+</div>
