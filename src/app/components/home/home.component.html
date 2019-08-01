@@ -1,4 +1,5 @@
 <h2>Home</h2>
+<h3 *ngIf='isLogged'>{{username}}</h3>
 <nav>
   <a routerLink='/login' *ngIf='!isLogged'>login</a>
   <a routerLink='' *ngIf='isLogged' (click)='logout()'>logout</a>

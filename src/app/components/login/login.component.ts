@@ -31,12 +31,11 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    var form = this.loginForm.controls;
+    const form = this.loginForm.controls;
     this.authenticationService.login(form.username.value, form.password.value)
       .subscribe(
         data => {
           this.error = null;
-          console.info(data);
           this.router.navigate(['/']);
         },
         error => {

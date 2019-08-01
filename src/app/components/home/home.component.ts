@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Constants } from 'src/app/constants';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -9,20 +8,23 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class HomeComponent implements OnInit {
   isLogged: boolean;
+  username: string;
 
   constructor(
     private authenticationService: AuthenticationService
   ) { }
 
   ngOnInit() {
-    this.isLogged = localStorage.getItem(Constants.CURRENT_AUTHENTICATION_KEY) !== null;
+    this.isLogged = this.authenticationService.isLogged();
+    if (this.isLogged) {
+      this.username = this.authenticationService.getSubject();
+    }
   }
 
   logout() {
-    console.debug('Logout');
-
     this.authenticationService.logout();
     this.isLogged = false;
+    this.username = null;
   }
 
 }
